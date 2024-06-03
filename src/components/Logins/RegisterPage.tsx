@@ -119,20 +119,20 @@ const RegisterPage = () => {
                   />
                 </div>
               </form>
+              <div className="mt-6">
+                <GoogleLogin />
+              </div>
+              <div className="mt-6">
+                <p>
+                  Already have an account?{" "}
+                  <Link href="/login" className="text-red-500">
+                    Login
+                  </Link>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="mt-6">
-        <GoogleLogin />
-      </div>
-      <div className="mt-6">
-        <p>
-          Already have an account?{" "}
-          <Link href="/login" className="text-red-500">
-            Login
-          </Link>
-        </p>
       </div>
     </div>
   );
