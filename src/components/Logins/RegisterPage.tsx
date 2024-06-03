@@ -1,11 +1,16 @@
 "use client";
 
+import { AuthContext } from "@/lib/AuthProvider";
 import Link from "next/link";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import GoogleLogin from "./GoogleLogin";
 
 const RegisterPage = () => {
   const [passMatch, setPassMatch] = useState(true);
+
+  const { user } = useContext(AuthContext);
+
+  console.log(user);
 
   // const { createUser, user } = useAuth();
 
