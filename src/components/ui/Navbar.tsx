@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const websiteName = "CareerNest";
@@ -11,6 +12,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     // await logout();
     console.log("Logout");
+    toast.success("Logout button clicked");
   };
 
   const menuItems = (
@@ -76,7 +78,7 @@ const Navbar = () => {
       <div className="navbar-end">
         {/* {user && ( */}
         <button
-          // onClick={handleLogout}
+          onClick={handleLogout}
           className="btn bg-red-500 text-white hidden lg:block"
         >
           Logout
