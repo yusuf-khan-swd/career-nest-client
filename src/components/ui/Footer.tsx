@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 const Footer = () => {
+  const websiteName = "CareerNest";
+
   const date = new Date().getFullYear();
 
   return (
@@ -107,7 +109,9 @@ const Footer = () => {
       </div>
       <div className="text-sm dark:bg-gray-700 mt-6 py-6 rounded-lg">
         <div className="items-center grid-flow-col text-center">
-          <p>Copyright &copy; {date} - All right reserved</p>
+          <p>
+            &copy; {date} {websiteName}. All right reserved
+          </p>
         </div>
         <div className="flex justify-center">
           <Link href="/" className="mr-2">
