@@ -109,8 +109,8 @@ const Footer = () => {
       </div>
       <div className="text-sm dark:bg-gray-700 mt-6 py-6 rounded-lg">
         <div className="items-center grid-flow-col text-center">
-          <p>
-            &copy; {date} {websiteName}. All right reserved
+          <p className="pb-2">
+            &copy; {date} {websiteName} . All right reserved
           </p>
         </div>
         <div className="flex justify-center">
