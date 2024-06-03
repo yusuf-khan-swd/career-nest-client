@@ -71,7 +71,7 @@ const Navbar = () => {
       <div className="navbar-end">
         {/* {user && ( */}
         <button
-          onClick={handleLogout}
+          // onClick={handleLogout}
           className="btn bg-red-500 text-white hidden lg:block"
         >
           Logout
