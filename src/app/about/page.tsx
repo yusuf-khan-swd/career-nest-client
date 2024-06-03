@@ -1,9 +1,7 @@
+import AboutPage from "@/components/About/AboutPage";
+
 const page = () => {
-  return (
-    <div>
-      <h1 className="text-3xl font-bold text-center">About page</h1>
-    </div>
-  );
+  return <AboutPage />;
 };
 
 export default page;
