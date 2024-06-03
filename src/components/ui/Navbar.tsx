@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -81,7 +82,12 @@ const Navbar = () => {
         {/* )} */}
         <div className="avatar">
           <div className="w-12 rounded-full border-2">
-            <img src={"/placeholder.jpg"} />
+            <Image
+              src={"/placeholder.jpg"}
+              alt="avatar image"
+              width={40}
+              height={40}
+            />
           </div>
         </div>
       </div>
