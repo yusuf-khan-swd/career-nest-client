@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 const Navbar = () => {
+  const websiteName = "CareerNest";
+
   // const { logout, user } = useAuth();
 
   const handleLogout = async () => {
@@ -62,7 +64,7 @@ const Navbar = () => {
           </ul>
         </div>
         <a className="btn btn-ghost text-xl" href="/">
-          daisyUI
+          {websiteName}
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
