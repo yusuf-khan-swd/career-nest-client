@@ -1,29 +1,32 @@
+import useAuth from "@/hooks/useAuth";
+import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 
 const GoogleLogin = () => {
-  // const { googleLogin } = useAuth();
+  const { googleLogin } = useAuth();
 
   const handleGoogleSignIn = () => {
     console.log("Google Login");
-    // googleLogin().then((data) => {
-    //   if (data?.user?.email) {
-    //     const email = data?.user?.email;
-    //     const name = data?.user?.displayName;
-    //     const user = { email, name };
+    googleLogin().then((data: any) => {
+      if (data?.user?.email) {
+        toast.success("Login success");
+        // const email = data?.user?.email;
+        // const name = data?.user?.displayName;
+        // const user = { email, name };
 
-    //     fetch("http://localhost:5000/user", {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-type": "application/json",
-    //       },
-    //       body: JSON.stringify(user),
-    //     })
-    //       .then((res) => res.json())
-    //       .then((data) => {
-    //         localStorage.setItem("token", data?.token);
-    //       });
-    //   }
-    // });
+        // fetch("http://localhost:5000/user", {
+        //   method: "POST",
+        //   headers: {
+        //     "Content-type": "application/json",
+        //   },
+        //   body: JSON.stringify(user),
+        // })
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     localStorage.setItem("token", data?.token);
+        //   });
+      }
+    });
   };
 
   return (
