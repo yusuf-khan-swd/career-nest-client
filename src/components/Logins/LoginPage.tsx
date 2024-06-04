@@ -1,10 +1,13 @@
 "use client";
 
+import { getBaseUrl } from "@/helpers/getBaseUrl";
+import useAuth from "@/hooks/useAuth";
 import Link from "next/link";
+import toast from "react-hot-toast";
 import GoogleLogin from "./GoogleLogin";
 
 const LoginPage = () => {
-  // const { signIn, user } = useAuth();
+  const { signIn, user } = useAuth();
 
   const handleSUbmit = async (e: any) => {
     e.preventDefault();
@@ -15,7 +18,27 @@ const LoginPage = () => {
 
     console.log(email, password);
 
-    // await signIn(email, password);
+    await signIn(email, password).then((data: any) => {
+      if (data?.user?.email) {
+        const email = data?.user?.email;
+        const user = { email };
+
+        const baseUrl = getBaseUrl();
+
+        fetch(`${baseUrl}/users`, {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(user),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            toast.success("Login Success");
+            localStorage.setItem("token", data?.data?.token);
+          });
+      }
+    });
   };
 
   return (
