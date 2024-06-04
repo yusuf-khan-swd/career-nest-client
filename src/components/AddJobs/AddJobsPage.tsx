@@ -12,12 +12,12 @@ const AddJobsPage = () => {
       const form = e.target;
 
       const title = form?.title.value;
-      const brand = form?.brand.value;
+      const location = form?.location.value;
       const price = form?.price.value;
       const description = form?.description.value;
       const image_url = form?.image_url.value;
 
-      const data = { title, brand, price, description, image_url };
+      const data = { title, location, price, description, image_url };
 
       const res = await fetch("http://localhost:5000/shoes", {
         method: "POST",
@@ -45,7 +45,7 @@ const AddJobsPage = () => {
           <form onSubmit={handleSubmit}>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Title</span>
+                <span className="label-text">Job Title</span>
               </label>
               <input
                 type="text"
@@ -56,12 +56,12 @@ const AddJobsPage = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Brand</span>
+                <span className="label-text">Location</span>
               </label>
               <input
                 type="text"
-                name="brand"
-                placeholder="Brand"
+                name="location"
+                placeholder="Location"
                 className="input input-bordered"
               />
             </div>
