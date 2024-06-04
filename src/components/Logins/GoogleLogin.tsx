@@ -1,10 +1,12 @@
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import useAuth from "@/hooks/useAuth";
+import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 
 const GoogleLogin = () => {
   const { googleLogin } = useAuth();
+  const router = useRouter();
 
   const handleGoogleSignIn = () => {
     googleLogin().then((data: any) => {
@@ -24,9 +26,14 @@ const GoogleLogin = () => {
           body: JSON.stringify(user),
         })
           .then((res) => res.json())
-          .then((data) => {
-            toast.success("Google Login Success");
-            localStorage.setItem("token", data?.data?.token);
+          .then((result) => {
+            if (result?.data) {
+              toast.success("Google Login Success");
+              localStorage.setItem("token", result?.data?.token);
+              router.push("/");
+            } else {
+              toast.error("Login Failed!");
+            }
           });
       }
     });
