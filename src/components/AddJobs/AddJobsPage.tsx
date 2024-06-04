@@ -52,6 +52,7 @@ const AddJobsPage = () => {
                 name="title"
                 placeholder="Title"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -74,6 +75,7 @@ const AddJobsPage = () => {
                 name="salary"
                 placeholder="Salary"
                 className="input input-bordered"
+                required
               />
             </div>
 
@@ -98,6 +100,7 @@ const AddJobsPage = () => {
                 placeholder="Description"
                 className="textarea textarea-bordered p-2"
                 rows={6}
+                required
               ></textarea>
             </div>
             <div className="mt-2 flex justify-center items-center">
