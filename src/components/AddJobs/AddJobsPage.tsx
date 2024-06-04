@@ -13,11 +13,11 @@ const AddJobsPage = () => {
 
       const title = form?.title.value;
       const location = form?.location.value;
-      const price = form?.price.value;
+      const salary = form?.salary.value;
       const description = form?.description.value;
       const image_url = form?.image_url.value;
 
-      const data = { title, location, price, description, image_url };
+      const data = { title, location, salary, description, image_url };
 
       const res = await fetch("http://localhost:5000/shoes", {
         method: "POST",
@@ -67,12 +67,12 @@ const AddJobsPage = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Price</span>
+                <span className="label-text">Salary</span>
               </label>
               <input
                 type="number"
-                name="price"
-                placeholder="Price"
+                name="salary"
+                placeholder="Salary"
                 className="input input-bordered"
               />
             </div>
