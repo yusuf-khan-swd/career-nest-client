@@ -25,6 +25,8 @@ const DashboardPage = () => {
 
   const handleLogout = async () => {
     await logout();
+    toast.success("Logout success");
+    localStorage.removeItem("token");
   };
 
   return (
