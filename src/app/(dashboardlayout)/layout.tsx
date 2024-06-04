@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
@@ -7,7 +8,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const dashboardItems = (
     <>
       <li>
-        <a>Navbar Item 1</a>
+        <Link href="/dashboard">Dashboard</Link>
       </li>
       <li>
         <a>Navbar Item 2</a>
