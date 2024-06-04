@@ -1,0 +1,4 @@
+.bannerBg {
+  background-image: url("/banner.jpeg");
+  object-fit: cover;
+}
