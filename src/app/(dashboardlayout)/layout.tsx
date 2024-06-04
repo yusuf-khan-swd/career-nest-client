@@ -1,6 +1,8 @@
 import React from "react";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
+  const websiteName = "CareerNest";
+
   const dashboardItems = (
     <>
       <li>
@@ -13,11 +15,11 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   );
 
   return (
-    <div className="drawer">
+    <div className="drawer lg:drawer-open">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="w-full navbar bg-base-300">
+        <div className="w-full navbar bg-base-100 border-b-2">
           <div className="flex-none lg:hidden">
             <label
               htmlFor="my-drawer-3"
@@ -39,7 +41,11 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
               </svg>
             </label>
           </div>
-          <div className="flex-1 px-2 mx-2">Navbar Title</div>
+          <div className="flex-1 px-2 mx-2">
+            <a className="btn btn-ghost text-xl" href="/">
+              {websiteName}
+            </a>
+          </div>
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
@@ -48,8 +54,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
           </div>
         </div>
         {/* Page content here */}
-        {children}
-        Content
+        <div className="m-2">{children}</div>
       </div>
       <div className="drawer-side">
         <label
