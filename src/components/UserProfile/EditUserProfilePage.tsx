@@ -25,7 +25,7 @@ const EditUserProfilePage = ({ id }: { id: string }) => {
           toast.error("User data failed to get");
         }
       });
-  }, []);
+  }, [id, token]);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -38,15 +38,24 @@ const EditUserProfilePage = ({ id }: { id: string }) => {
     const user = { email, name, number };
     console.log(user);
 
-    fetch(`http://localhost:5000/user/profile/${userInfo?._id}`, {
+    const baseUrl = getBaseUrl();
+
+    fetch(`${baseUrl}/users/profile/${id}`, {
       method: "PATCH",
       headers: {
+        Authorization: `Bearer ${token}`,
         "Content-type": "application/json",
       },
       body: JSON.stringify(user),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((result) => {
+        if (result?.data) {
+          toast.success("User data updated success");
+        } else {
+          toast.error("User data update failed");
+        }
+      });
   };
   return (
     <div>
