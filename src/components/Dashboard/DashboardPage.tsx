@@ -33,10 +33,7 @@ const DashboardPage = () => {
     <div>
       <div className="flex justify-between mb-4">
         <h1 className="text-3xl font-semibold">Profile Information</h1>
-        <Link
-          href={`/dashboard/profile/edit/${userInfo?._id}`}
-          className="btn btn-info"
-        >
+        <Link href={`/profile/edit/${userInfo?._id}`} className="btn btn-info">
           Edit Profile
         </Link>
       </div>
