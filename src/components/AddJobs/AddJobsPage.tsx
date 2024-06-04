@@ -115,7 +115,7 @@ const AddJobsPage = () => {
               <input
                 className="btn mt-4 w-full btn-primary text-white p-4"
                 type="submit"
-                value="Add Product"
+                value="Add Job"
               />
             </div>
           </form>
