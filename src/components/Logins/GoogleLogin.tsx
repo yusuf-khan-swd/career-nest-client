@@ -25,7 +25,8 @@ const GoogleLogin = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            localStorage.setItem("token", data?.token);
+            toast.success("Google Login Success");
+            localStorage.setItem("token", data?.data?.token);
           });
       }
     });
