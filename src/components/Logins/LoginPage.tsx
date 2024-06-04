@@ -36,9 +36,13 @@ const LoginPage = () => {
         })
           .then((res) => res.json())
           .then((result) => {
-            toast.success("Login Success");
-            localStorage.setItem("token", result?.data?.token);
-            router.push("/");
+            if (result?.data) {
+              toast.success("Login Success");
+              localStorage.setItem("token", result?.data?.token);
+              router.push("/");
+            } else {
+              toast.error("Login Failed!");
+            }
           });
       }
     });
