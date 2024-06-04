@@ -1,13 +1,16 @@
 "use client";
 
+import { getBaseUrl } from "@/helpers/getBaseUrl";
+import useAuth from "@/hooks/useAuth";
 import Link from "next/link";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import GoogleLogin from "./GoogleLogin";
 
 const RegisterPage = () => {
   const [passMatch, setPassMatch] = useState(true);
 
-  // const { createUser, user } = useAuth();
+  const { createUser, user } = useAuth();
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -25,21 +28,27 @@ const RegisterPage = () => {
     console.log(email, password, confirm_password);
 
     if (password === confirm_password) {
-      // createUser(email, password).then((data) => {
-      //   if (data?.user?.email) {
-      //     const email = data?.user?.email;
-      //     const user = { email, name };
-      //     fetch("http://localhost:5000/user", {
-      //       method: "POST",
-      //       headers: {
-      //         "Content-type": "application/json",
-      //       },
-      //       body: JSON.stringify(user),
-      //     })
-      //       .then((res) => res.json())
-      //       .then((data) => console.log(data));
-      //   }
-      // });
+      createUser(email, password).then((data: any) => {
+        if (data?.user?.email) {
+          const email = data?.user?.email;
+          const user = { email, name };
+
+          const baseUrl = getBaseUrl();
+
+          fetch(`${baseUrl}/users`, {
+            method: "POST",
+            headers: {
+              "Content-type": "application/json",
+            },
+            body: JSON.stringify(user),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              toast.success("Google Login Success");
+              localStorage.setItem("token", data?.data?.token);
+            });
+        }
+      });
     }
   };
 
