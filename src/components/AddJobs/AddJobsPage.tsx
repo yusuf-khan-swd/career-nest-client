@@ -1,9 +1,11 @@
 "use client";
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
+import useAuth from "@/hooks/useAuth";
 import toast from "react-hot-toast";
 
 const AddJobsPage = () => {
+  const { user } = useAuth();
   const token = localStorage.getItem("token");
 
   const handleSubmit = async (e: any) => {
@@ -20,7 +22,9 @@ const AddJobsPage = () => {
       const description = form?.description.value;
       const image_url = form?.image_url.value;
 
-      const data = { title, location, salary, description, image_url };
+      const email = user?.email;
+
+      const data = { title, location, salary, description, image_url, email };
 
       const baseUrl = getBaseUrl();
 
