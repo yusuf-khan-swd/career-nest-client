@@ -76,14 +76,14 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{menuItems}</ul>
       </div>
       <div className="navbar-end">
-        {/* {user && ( */}
-        <button
-          onClick={handleLogout}
-          className="btn bg-red-500 text-white hidden lg:block"
-        >
-          Logout
-        </button>
-        {/* )} */}
+        {user && (
+          <button
+            onClick={handleLogout}
+            className="btn bg-red-500 text-white hidden lg:block"
+          >
+            Logout
+          </button>
+        )}
         <div className="avatar">
           <div className="w-12 rounded-full border-2">
             <Image
