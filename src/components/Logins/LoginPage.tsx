@@ -3,11 +3,13 @@
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import useAuth from "@/hooks/useAuth";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import GoogleLogin from "./GoogleLogin";
 
 const LoginPage = () => {
   const { signIn, user } = useAuth();
+  const router = useRouter();
 
   const handleSUbmit = async (e: any) => {
     e.preventDefault();
@@ -18,7 +20,7 @@ const LoginPage = () => {
 
     console.log(email, password);
 
-    await signIn(email, password).then((data: any) => {
+    signIn(email, password).then((data: any) => {
       if (data?.user?.email) {
         const email = data?.user?.email;
         const user = { email };
@@ -33,9 +35,10 @@ const LoginPage = () => {
           body: JSON.stringify(user),
         })
           .then((res) => res.json())
-          .then((data) => {
+          .then((result) => {
             toast.success("Login Success");
-            localStorage.setItem("token", data?.data?.token);
+            localStorage.setItem("token", result?.data?.token);
+            router.push("/");
           });
       }
     });
