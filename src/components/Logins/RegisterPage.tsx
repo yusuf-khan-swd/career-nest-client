@@ -3,12 +3,14 @@
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import useAuth from "@/hooks/useAuth";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import GoogleLogin from "./GoogleLogin";
 
 const RegisterPage = () => {
   const [passMatch, setPassMatch] = useState(true);
+  const router = useRouter();
 
   const { createUser, user } = useAuth();
 
@@ -43,9 +45,14 @@ const RegisterPage = () => {
             body: JSON.stringify(user),
           })
             .then((res) => res.json())
-            .then((data) => {
-              toast.success("Registration Success");
-              localStorage.setItem("token", data?.data?.token);
+            .then((result) => {
+              if (result?.data) {
+                toast.success("Registration Success!");
+                localStorage.setItem("token", result?.data?.token);
+                router.push("/");
+              } else {
+                toast.error("Login Failed!");
+              }
             });
         }
       });
