@@ -45,7 +45,9 @@ const AddJobsPage = () => {
           <form onSubmit={handleSubmit}>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Job Title</span>
+                <span className="label-text">
+                  <span className="text-red-500 mr-1">*</span>Job Title
+                </span>
               </label>
               <input
                 type="text"
@@ -57,7 +59,9 @@ const AddJobsPage = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Location</span>
+                <span className="label-text">
+                  <span className="text-red-500 mr-1">*</span>Location
+                </span>
               </label>
               <input
                 type="text"
@@ -68,7 +72,9 @@ const AddJobsPage = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Salary</span>
+                <span className="label-text">
+                  <span className="text-red-500 mr-1">*</span>Salary
+                </span>
               </label>
               <input
                 type="number"
@@ -93,7 +99,9 @@ const AddJobsPage = () => {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Description</span>
+                <span className="label-text">
+                  <span className="text-red-500 mr-1">*</span>Description
+                </span>
               </label>
               <textarea
                 name="description"
