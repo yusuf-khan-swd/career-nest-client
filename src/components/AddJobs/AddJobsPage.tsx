@@ -24,7 +24,7 @@ const AddJobsPage = () => {
 
       const baseUrl = getBaseUrl();
 
-      const res = await fetch(`${baseUrl}/users/jobs`, {
+      const res = await fetch(`${baseUrl}/jobs`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -35,7 +35,7 @@ const AddJobsPage = () => {
 
       const result = await res.json();
 
-      if (result?.data) {
+      if (result) {
         toast.success("Jobs added successfully");
       } else {
         toast.error("Jobs added failed!");
