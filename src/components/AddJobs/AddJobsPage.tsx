@@ -1,8 +1,11 @@
 "use client";
 
+import { getBaseUrl } from "@/helpers/getBaseUrl";
 import toast from "react-hot-toast";
 
 const AddJobsPage = () => {
+  const token = localStorage.getItem("token");
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
@@ -19,18 +22,23 @@ const AddJobsPage = () => {
 
       const data = { title, location, salary, description, image_url };
 
-      const res = await fetch("http://localhost:5000/shoes", {
+      const baseUrl = getBaseUrl();
+
+      const res = await fetch(`${baseUrl}/users/jobs`, {
         method: "POST",
         headers: {
+          Authorization: `Bearer ${token}`,
           "Content-type": "application/json",
         },
         body: JSON.stringify(data),
       });
 
-      const resData = await res.json();
+      const result = await res.json();
 
-      if (resData) {
-        toast.success("Product added successfully");
+      if (result?.data) {
+        toast.success("Jobs added successfully");
+      } else {
+        toast.error("Jobs added failed!");
       }
 
       form.reset();
