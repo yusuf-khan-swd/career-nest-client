@@ -13,6 +13,9 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
       <li>
         <Link href="/add-jobs">Add Jobs</Link>
       </li>
+      <li>
+        <Link href="/all-jobs">All Jobs</Link>
+      </li>
     </>
   );
 
