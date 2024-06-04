@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
@@ -50,6 +51,33 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
               {dashboardItems}
+            </ul>
+          </div>
+          <div className="dropdown dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle avatar"
+            >
+              <div className="w-10 rounded-full">
+                <Image
+                  src={"/placeholder.jpg"}
+                  alt="avatar image"
+                  width={40}
+                  height={40}
+                />
+              </div>
+            </div>
+            <ul
+              tabIndex={0}
+              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <button className="btn btn-error btn-sm">Logout</button>
+              </li>
             </ul>
           </div>
         </div>
