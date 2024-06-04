@@ -1,7 +1,31 @@
 "use client";
 
+import { getBaseUrl } from "@/helpers/getBaseUrl";
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+
 const EditUserProfilePage = ({ id }: { id: string }) => {
-  const userInfo: any = {};
+  const [userInfo, setUserInfo] = useState<null | any>({});
+
+  const token = localStorage.getItem("token");
+
+  useEffect(() => {
+    const baseUrl = getBaseUrl();
+
+    fetch(`${baseUrl}/users/profile/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result?.data) {
+          setUserInfo(result?.data);
+        } else {
+          toast.error("User data failed to get");
+        }
+      });
+  }, []);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -27,7 +51,7 @@ const EditUserProfilePage = ({ id }: { id: string }) => {
   return (
     <div>
       <h1 className="text-3xl font-semibold text-center mb-4">
-        Update Profile Information
+        Update Profile Information: {id}
       </h1>
       <div className="hero bg-base-200 p-8">
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
