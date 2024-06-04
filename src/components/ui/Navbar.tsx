@@ -13,6 +13,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     await logout();
     toast.success("Logout success");
+    localStorage.removeItem("token");
   };
 
   const menuItems = (
