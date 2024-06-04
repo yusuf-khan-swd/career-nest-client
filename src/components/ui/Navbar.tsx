@@ -1,5 +1,6 @@
 "use client";
 
+import useAuth from "@/hooks/useAuth";
 import Image from "next/image";
 import Link from "next/link";
 import toast from "react-hot-toast";
@@ -7,12 +8,11 @@ import toast from "react-hot-toast";
 const Navbar = () => {
   const websiteName = "CareerNest";
 
-  // const { logout, user } = useAuth();
+  const { logout, user } = useAuth();
 
   const handleLogout = async () => {
-    // await logout();
-    console.log("Logout");
-    toast.success("Logout button clicked");
+    await logout();
+    toast.success("Logout success");
   };
 
   const menuItems = (
@@ -23,21 +23,21 @@ const Navbar = () => {
       <li>
         <Link href="/about">About</Link>
       </li>
-      {/* {!user && ( */}
-      <>
+      {!user && (
+        <>
+          <li>
+            <Link href="/login">Login</Link>
+          </li>
+          <li>
+            <Link href="/register">Register</Link>
+          </li>
+        </>
+      )}
+      {user && (
         <li>
-          <Link href="/login">Login</Link>
+          <Link href="/dashboard">Dashboard</Link>
         </li>
-        <li>
-          <Link href="/register">Register</Link>
-        </li>
-      </>
-      {/* )} */}
-      {/* {user && ( */}
-      <li>
-        <Link href="/dashboard">Dashboard</Link>
-      </li>
-      {/* )} */}
+      )}
     </>
   );
 
