@@ -44,7 +44,7 @@ const RegisterPage = () => {
           })
             .then((res) => res.json())
             .then((data) => {
-              toast.success("Google Login Success");
+              toast.success("Registration Success");
               localStorage.setItem("token", data?.data?.token);
             });
         }
