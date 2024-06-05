@@ -1,5 +1,6 @@
 "use client";
 
+import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import useAuth from "@/hooks/useAuth";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,6 +9,10 @@ import toast from "react-hot-toast";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const websiteName = "CareerNest";
+
+  const { logout, user, loading } = useAuth();
+
+  if (loading) return <LoadingSpinner />;
 
   const dashboardItems = (
     <>
@@ -22,8 +27,6 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
       </li>
     </>
   );
-
-  const { logout } = useAuth();
 
   const handleLogout = async () => {
     await logout();
