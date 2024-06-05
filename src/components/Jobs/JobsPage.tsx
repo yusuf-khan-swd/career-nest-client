@@ -22,7 +22,9 @@ const JobsPage = () => {
   // Search is case sensitive
   const handleSearch = (value: any) => {
     if (value) {
-      const filteredJobs = jobs.filter((job: any) => job.title.includes(value));
+      const filteredJobs = jobs.filter((job: any) =>
+        job.title.toUpperCase().includes(value.toUpperCase())
+      );
       setJobs(filteredJobs);
     } else {
       setJobs(prevJobs);
