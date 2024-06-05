@@ -17,10 +17,15 @@ const JobsPage = () => {
 
   const handleSearch = (value: any) => {
     console.log({ value });
+    const prevJobs = [...jobs];
 
-    const filteredJobs = jobs.filter((job: any) => job.title.includes(value));
-    setJobs(filteredJobs);
-    console.log({ filteredJobs });
+    if (value) {
+      const filteredJobs = jobs.filter((job: any) => job.title.includes(value));
+      setJobs(filteredJobs);
+      console.log({ filteredJobs });
+    } else {
+      setJobs(prevJobs);
+    }
   };
 
   return (
