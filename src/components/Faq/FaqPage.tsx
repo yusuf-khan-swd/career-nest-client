@@ -1,6 +1,6 @@
 const FaqPage = () => {
   return (
-    <div className="min-h-[80vh] max-w-4xl mx-auto m-2 container">
+    <div className="min-h-[80vh] max-w-4xl mx-auto m-2 container mt-8">
       <div className="collapse collapse-arrow bg-base-200 mb-4">
         <input type="checkbox" className="peer" />
         <div className="collapse-title text-xl font-medium">
