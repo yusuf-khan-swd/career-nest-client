@@ -20,11 +20,13 @@ const HomePage = () => {
     <div>
       <Banner />
       <div className="m-2 container mx-auto mt-12">
-        <h1 className="text-3xl font-bold mb-3 text-center">Recent Jobs</h1>
-        <div className="grid grid-cols-1 gap-4">
-          {jobs.slice(0, 2).map((job: any) => (
-            <JobCard key={job?.id} job={job} />
-          ))}
+        <div>
+          <h1 className="text-3xl font-bold mb-3 text-center">Recent Jobs</h1>
+          <div className="grid grid-cols-1 gap-4">
+            {jobs.slice(0, 2).map((job: any) => (
+              <JobCard key={job?.id} job={job} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
