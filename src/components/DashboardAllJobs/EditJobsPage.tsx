@@ -23,18 +23,29 @@ const EditJobsPage = ({ id }: { id: string }) => {
       });
   }, [id, token]);
 
-  console.log(jobInfo);
-
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
     const form = e.target;
-    const name = form.name.value;
-    const email = jobInfo?.email;
-    const number = form.number.value;
 
-    const job = { email, name, number };
-    console.log(job);
+    const title = form?.title?.value;
+    const company = form?.company?.value;
+    const type = form?.type?.value;
+    const location = form?.location?.value;
+    const salary = form?.salary?.value;
+    const description = form?.description?.value;
+    const image_url = form?.image_url?.value;
+
+    const jobData = {
+      title,
+      company,
+      type,
+      location,
+      salary,
+      description,
+      image_url,
+    };
+    console.log(jobData);
 
     const baseUrl = getBaseUrl();
 
@@ -44,7 +55,7 @@ const EditJobsPage = ({ id }: { id: string }) => {
         Authorization: `Bearer ${token}`,
         "Content-type": "application/json",
       },
-      body: JSON.stringify(job),
+      body: JSON.stringify(jobData),
     })
       .then((res) => res.json())
       .then((result) => {
