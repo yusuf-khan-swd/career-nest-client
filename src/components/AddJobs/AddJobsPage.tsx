@@ -17,6 +17,8 @@ const AddJobsPage = () => {
       const form = e.target;
 
       const title = form?.title.value;
+      const company = form?.company.value;
+      const type = form?.type.value;
       const location = form?.location.value;
       const salary = form?.salary.value;
       const description = form?.description.value;
@@ -24,7 +26,16 @@ const AddJobsPage = () => {
 
       const email = user?.email;
 
-      const data = { title, location, salary, description, image_url, email };
+      const data = {
+        title,
+        company,
+        type,
+        location,
+        salary,
+        description,
+        image_url,
+        email,
+      };
 
       const baseUrl = getBaseUrl();
 
@@ -65,6 +76,34 @@ const AddJobsPage = () => {
                 type="text"
                 name="title"
                 placeholder="Title"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">
+                  <span className="text-red-500 mr-1">*</span>Company Name
+                </span>
+              </label>
+              <input
+                type="text"
+                name="company"
+                placeholder="Company Name"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">
+                  <span className="text-red-500 mr-1">*</span>Job Type
+                </span>
+              </label>
+              <input
+                type="text"
+                name="type"
+                placeholder="Job Type"
                 className="input input-bordered"
                 required
               />
