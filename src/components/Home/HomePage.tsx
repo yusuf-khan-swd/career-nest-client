@@ -4,6 +4,7 @@ import { getBaseUrl } from "@/helpers/getBaseUrl";
 import { useEffect, useState } from "react";
 import JobCard from "../Jobs/JobCard";
 import Banner from "../ui/Banner";
+import Statics from "../ui/Statics";
 
 const HomePage = () => {
   const [jobs, setJobs] = useState<null | any>([]);
@@ -27,6 +28,9 @@ const HomePage = () => {
               <JobCard key={job?.id} job={job} />
             ))}
           </div>
+        </div>
+        <div>
+          <Statics />
         </div>
       </div>
     </div>
