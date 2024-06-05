@@ -1,3 +1,5 @@
+"use client";
+
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import { useEffect, useState } from "react";
 
