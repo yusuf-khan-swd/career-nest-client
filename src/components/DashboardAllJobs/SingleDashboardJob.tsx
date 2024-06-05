@@ -1,21 +1,30 @@
+import { getBaseUrl } from "@/helpers/getBaseUrl";
 import Link from "next/link";
 import toast from "react-hot-toast";
 
 const SingleDashboardJob = ({ job, onDelete }: { job: any; onDelete: any }) => {
   const { _id, title, location, salary, description } = job;
+  const token = localStorage.getItem("token");
 
   const handleDelete = async () => {
-    const proceedToDelete = confirm("Are sure you want to delete this item");
+    const proceedToDelete = confirm("Are sure you want to delete this Jobs");
 
     if (proceedToDelete) {
-      const res = await fetch(`http://localhost:5000/shoes/${_id}`, {
+      const baseUrl = getBaseUrl();
+
+      const res = await fetch(`${baseUrl}/jobs/${_id}`, {
         method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       });
       const data = await res.json();
       console.log(data);
 
       if (data) {
         toast.success("Product deleted successfully");
+      } else {
+        toast.error("Product deleted failed");
       }
 
       onDelete(_id);
