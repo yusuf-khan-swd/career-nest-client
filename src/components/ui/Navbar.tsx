@@ -33,6 +33,9 @@ const Navbar = () => {
       <li>
         <Link href="/blog">Blog</Link>
       </li>
+      <li>
+        <Link href="/contact">Contact Us</Link>
+      </li>
       {!user && (
         <>
           <li>
