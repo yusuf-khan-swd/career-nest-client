@@ -1,3 +1,5 @@
+"use client";
+
 import useAuth from "@/hooks/useAuth";
 import Image from "next/image";
 import Link from "next/link";
