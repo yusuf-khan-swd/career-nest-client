@@ -136,7 +136,7 @@ const EditJobsPage = ({ id }: { id: string }) => {
               </label>
               <input
                 defaultValue={jobInfo?.salary}
-                type="number"
+                type="text"
                 name="salary"
                 placeholder="Salary"
                 className="input input-bordered"
