@@ -18,8 +18,10 @@ const JobsPage = () => {
   const handleSearch = (value: any) => {
     console.log(value);
 
-    const filter = jobs.filter((job: any) => job.title.title.includes(value));
-    console.log(filter);
+    const filteredJobs = jobs.filter((job: any) =>
+      job.title.title.includes(value)
+    );
+    setJobs(filteredJobs);
   };
 
   return (
