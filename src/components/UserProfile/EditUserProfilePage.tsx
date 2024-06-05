@@ -60,7 +60,7 @@ const EditUserProfilePage = ({ id }: { id: string }) => {
   return (
     <div>
       <h1 className="text-3xl font-semibold text-center mb-4">
-        Update Profile Information: {id}
+        Update Profile Information
       </h1>
       <div className="hero bg-base-200 p-8">
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
