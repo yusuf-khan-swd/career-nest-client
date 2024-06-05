@@ -32,7 +32,7 @@ const SingleDashboardJob = ({ job, onDelete }: { job: any; onDelete: any }) => {
   };
 
   return (
-    <div className="card bg-base-100 shadow-xl border">
+    <div className="card w-full bg-base-100 shadow-xl border">
       <div className="card-body">
         <h2 className="card-title">Job Title: {title}</h2>
         <p>Company: {company}</p>
