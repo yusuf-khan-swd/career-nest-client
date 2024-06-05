@@ -4,15 +4,18 @@ import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import useAuth from "@/hooks/useAuth";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import toast from "react-hot-toast";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const websiteName = "CareerNest";
-
   const { logout, user, loading } = useAuth();
+  const router = useRouter();
 
   if (loading) return <LoadingSpinner />;
+
+  if (!user) return router.push("/login");
 
   const dashboardItems = (
     <>
