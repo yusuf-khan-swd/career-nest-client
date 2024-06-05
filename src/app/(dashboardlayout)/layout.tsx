@@ -1,6 +1,8 @@
+import useAuth from "@/hooks/useAuth";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import toast from "react-hot-toast";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const websiteName = "CareerNest";
@@ -18,6 +20,14 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
       </li>
     </>
   );
+
+  const { logout, user } = useAuth();
+
+  const handleLogout = async () => {
+    await logout();
+    toast.success("Logout success");
+    localStorage.removeItem("token");
+  };
 
   return (
     <div className="drawer lg:drawer-open">
@@ -80,7 +90,9 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
                 <a href="/">Home</a>
               </li>
               <li>
-                <button className="btn btn-error btn-sm">Logout</button>
+                <button className="btn btn-error btn-sm" onClick={handleLogout}>
+                  Logout
+                </button>
               </li>
             </ul>
           </div>
