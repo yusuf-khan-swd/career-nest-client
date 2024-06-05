@@ -6,11 +6,11 @@
 
 ## Features
 
-Job Listings: Allow employers to post job listings with details such as job title, description, location, salary, and required qualifications.
+- Job Listings: Allow employers to post job listings with details such as job title, description, location, salary, and required qualifications.
 
-Advanced Search: Provide advanced search functionality for job seekers to filter job listings based on criteria such as location, job type, industry, salary range, and required skills.
+- Advanced Search: Provide advanced search functionality for job seekers to filter job listings based on criteria such as location, job type, industry, salary range, and required skills.
 
-User Accounts: Allow employers and job seekers to create accounts where they can manage their job listings, applications, resumes, and profile information.
+- User Accounts: Allow employers and job seekers to create accounts where they can manage their job listings, applications, resumes, and profile information.
 
 ## Getting Started
 
