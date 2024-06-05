@@ -23,7 +23,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     </>
   );
 
-  const { logout, user } = useAuth();
+  const { logout } = useAuth();
 
   const handleLogout = async () => {
     await logout();
