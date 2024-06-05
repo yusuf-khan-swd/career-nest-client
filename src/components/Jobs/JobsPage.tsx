@@ -2,6 +2,7 @@
 
 import { getBaseUrl } from "@/helpers/getBaseUrl";
 import { useEffect, useState } from "react";
+import JobCard from "./JobCard";
 
 const JobsPage = () => {
   const [jobs, setJobs] = useState<null | any>([]);
@@ -14,11 +15,14 @@ const JobsPage = () => {
       .then((data) => setJobs(data));
   }, []);
 
-  console.log(jobs);
-
   return (
-    <div>
-      <h1 className="text-3xl font-bold text-center">Jobs page</h1>
+    <div className="m-2 container mx-auto">
+      <h1 className="text-3xl font-bold text-center mb-2">All Jobs</h1>
+      <div className="grid grid-cols-1 gap-4">
+        {jobs.map((job: any) => (
+          <JobCard key={job?.id} job={job} />
+        ))}
+      </div>
     </div>
   );
 };
