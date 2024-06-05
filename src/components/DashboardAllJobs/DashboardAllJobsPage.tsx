@@ -11,19 +11,19 @@ const DashboardAllJobsPage = () => {
       .then((data) => setJobs(data));
   }, []);
 
-  const handleDeleteProduct = (id: string) => {
-    setJobs(jobs.filter((product: any) => product._id !== id));
+  const handleDeleteJob = (id: string) => {
+    setJobs(jobs.filter((job: any) => job._id !== id));
   };
 
   return (
     <div>
       <h1 className="text-5xl font-bold text-center">All Jobs</h1>
       <div className="my-16 flex justify-center flex-wrap gap-4">
-        {jobs.map((shoe: any) => (
+        {jobs.map((job: any) => (
           <SingleDashboardJob
-            key={shoe?.id}
-            job={shoe}
-            onDelete={handleDeleteProduct}
+            key={job?.id}
+            job={job}
+            onDelete={handleDeleteJob}
           />
         ))}
       </div>
