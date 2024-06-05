@@ -15,14 +15,12 @@ const JobsPage = () => {
       .then((data) => setJobs(data));
   }, []);
 
+  // Search is case sensitive
   const handleSearch = (value: any) => {
-    console.log({ value });
     const prevJobs = [...jobs];
-
     if (value) {
       const filteredJobs = jobs.filter((job: any) => job.title.includes(value));
       setJobs(filteredJobs);
-      console.log({ filteredJobs });
     } else {
       setJobs(prevJobs);
     }
@@ -31,13 +29,13 @@ const JobsPage = () => {
   return (
     <div className="m-2 container mx-auto">
       <h1 className="text-3xl font-bold text-center mb-2">All Jobs</h1>
-      <div className="form-control">
+      <div className="form-control mb-3">
         <label className="label">
           <span className="label-text">Search</span>
         </label>
         <input
           type="text"
-          placeholder="Search"
+          placeholder="e.g Software"
           className="input input-bordered"
           onChange={(e: any) => handleSearch(e.target.value)}
         />
