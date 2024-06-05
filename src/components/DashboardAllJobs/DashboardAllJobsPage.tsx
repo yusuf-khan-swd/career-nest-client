@@ -1,4 +1,5 @@
 "use client";
+import { getBaseUrl } from "@/helpers/getBaseUrl";
 import { useEffect, useState } from "react";
 import SingleDashboardJob from "./SingleDashboardJob";
 
@@ -6,7 +7,9 @@ const DashboardAllJobsPage = () => {
   const [jobs, setJobs] = useState<null | any>([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/jobs")
+    const baseUrl = getBaseUrl();
+
+    fetch(`${baseUrl}/jobs`)
       .then((res) => res.json())
       .then((data) => setJobs(data));
   }, []);
