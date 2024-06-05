@@ -5,55 +5,57 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 const EditJobsPage = ({ id }: { id: string }) => {
-  const [userInfo, setUserInfo] = useState<null | any>({});
+  const [jobInfo, setJobInfo] = useState<null | any>({});
 
   const token = localStorage.getItem("token");
 
   useEffect(() => {
     const baseUrl = getBaseUrl();
 
-    fetch(`${baseUrl}/users/profile/${id}`, {
+    fetch(`${baseUrl}/jobs/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     })
       .then((res) => res.json())
       .then((result) => {
-        if (result?.data) {
-          setUserInfo(result?.data);
+        if (result) {
+          setJobInfo(result);
         } else {
-          toast.error("User data failed to get");
+          toast.error("Job data failed to get");
         }
       });
   }, [id, token]);
+
+  console.log(jobInfo);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
     const form = e.target;
     const name = form.name.value;
-    const email = userInfo?.email;
+    const email = jobInfo?.email;
     const number = form.number.value;
 
-    const user = { email, name, number };
-    console.log(user);
+    const job = { email, name, number };
+    console.log(job);
 
     const baseUrl = getBaseUrl();
 
-    fetch(`${baseUrl}/users/profile/${id}`, {
+    fetch(`${baseUrl}/jobs/${id}`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-type": "application/json",
       },
-      body: JSON.stringify(user),
+      body: JSON.stringify(job),
     })
       .then((res) => res.json())
       .then((result) => {
         if (result?.data) {
-          toast.success("User data updated success");
+          toast.success("Job data updated success");
         } else {
-          toast.error("User data update failed");
+          toast.error("Job data update failed");
         }
       });
   };
