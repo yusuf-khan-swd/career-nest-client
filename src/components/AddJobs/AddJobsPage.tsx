@@ -16,13 +16,13 @@ const AddJobsPage = () => {
     if (proceedToAdd) {
       const form = e.target;
 
-      const title = form?.title.value;
-      const company = form?.company.value;
-      const type = form?.type.value;
-      const location = form?.location.value;
-      const salary = form?.salary.value;
-      const description = form?.description.value;
-      const image_url = form?.image_url.value;
+      const title = form?.title?.value;
+      const company = form?.company?.value;
+      const type = form?.type?.value;
+      const location = form?.location?.value;
+      const salary = form?.salary?.value;
+      const description = form?.description?.value;
+      const image_url = form?.image_url?.value;
 
       const email = user?.email;
 
