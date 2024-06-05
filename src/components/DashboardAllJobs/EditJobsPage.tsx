@@ -12,11 +12,7 @@ const EditJobsPage = ({ id }: { id: string }) => {
   useEffect(() => {
     const baseUrl = getBaseUrl();
 
-    fetch(`${baseUrl}/jobs/${id}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
+    fetch(`${baseUrl}/jobs/${id}`)
       .then((res) => res.json())
       .then((result) => {
         if (result) {
@@ -63,7 +59,7 @@ const EditJobsPage = ({ id }: { id: string }) => {
     <div>
       <h1>Edit Jobs Page{id}</h1>
       <div>
-        <h1 className="text-5xl font-bold text-center mt-4 mb-6">Add a Job</h1>
+        <h1 className="text-5xl font-bold text-center mt-4 mb-6">Update Job</h1>
         <div className="card shadow-xl bg-base-200">
           <div className="card-body">
             <form onSubmit={handleSubmit}>
@@ -167,7 +163,7 @@ const EditJobsPage = ({ id }: { id: string }) => {
                 <input
                   className="btn mt-4 w-full btn-primary text-white p-4"
                   type="submit"
-                  value="Add This Job"
+                  value="Update Job"
                 />
               </div>
             </form>
