@@ -102,6 +102,20 @@ const EditJobsPage = ({ id }: { id: string }) => {
             <div className="form-control">
               <label className="label">
                 <span className="label-text">
+                  <span className="text-red-500 mr-1">*</span>Location
+                </span>
+              </label>
+              <input
+                defaultValue={jobInfo?.location}
+                type="text"
+                name="location"
+                placeholder="Location"
+                className="input input-bordered"
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">
                   <span className="text-red-500 mr-1">*</span>Job Type
                 </span>
               </label>
@@ -112,20 +126,6 @@ const EditJobsPage = ({ id }: { id: string }) => {
                 placeholder="Job Type"
                 className="input input-bordered"
                 required
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">
-                  <span className="text-red-500 mr-1">*</span>Location
-                </span>
-              </label>
-              <input
-                defaultValue={jobInfo?.location}
-                type="text"
-                name="location"
-                placeholder="Location"
-                className="input input-bordered"
               />
             </div>
             <div className="form-control">
