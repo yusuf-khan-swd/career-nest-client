@@ -3,7 +3,7 @@ import Link from "next/link";
 import toast from "react-hot-toast";
 
 const SingleDashboardJob = ({ job, onDelete }: { job: any; onDelete: any }) => {
-  const { _id, title, location, salary, description } = job;
+  const { _id, title, company, location, type, salary, description } = job;
   const token = localStorage.getItem("token");
 
   const handleDelete = async () => {
@@ -32,18 +32,14 @@ const SingleDashboardJob = ({ job, onDelete }: { job: any; onDelete: any }) => {
   };
 
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
-      <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          alt="Shoes"
-        />
-      </figure>
+    <div className="card bg-base-100 shadow-xl border">
       <div className="card-body">
-        <h2 className="card-title">{title}</h2>
-        <h3 className="text-xl font-semibold">Brand: {location}</h3>
-        <h3 className="text-xl font-semibold">Price: ${salary}</h3>
-        <p>Description: {description}</p>
+        <h2 className="card-title">Job Title: {title}</h2>
+        <p>Company: {company}</p>
+        <p className="font-semibold">Location: {location}</p>
+        <p>Job Type: {type}</p>
+        <p className="font-semibold">Salary: {salary}</p>
+        <p>Description: {description.slice(0, 255) + "..."}</p>
         <div className="card-actions justify-end">
           <Link href={`/jobs/view/${_id}`}>
             <button className="btn bg-indigo-500 text-white">
