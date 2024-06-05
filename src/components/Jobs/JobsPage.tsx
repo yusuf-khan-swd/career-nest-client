@@ -16,12 +16,11 @@ const JobsPage = () => {
   }, []);
 
   const handleSearch = (value: any) => {
-    console.log(value);
+    console.log({ value });
 
-    const filteredJobs = jobs.filter((job: any) =>
-      job.title.title.includes(value)
-    );
+    const filteredJobs = jobs.filter((job: any) => job.title.includes(value));
     setJobs(filteredJobs);
+    console.log({ filteredJobs });
   };
 
   return (
