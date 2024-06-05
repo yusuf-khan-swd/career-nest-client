@@ -22,7 +22,6 @@ const AddJobsPage = () => {
       const location = form?.location?.value;
       const salary = form?.salary?.value;
       const description = form?.description?.value;
-      const image_url = form?.image_url?.value;
 
       const email = user?.email;
 
@@ -33,7 +32,6 @@ const AddJobsPage = () => {
         location,
         salary,
         description,
-        image_url,
         email,
       };
 
@@ -133,18 +131,6 @@ const AddJobsPage = () => {
                 placeholder="Salary"
                 className="input input-bordered"
                 required
-              />
-            </div>
-
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Image URL</span>
-              </label>
-              <input
-                type="text"
-                name="image_url"
-                placeholder="Image URL"
-                className="input input-bordered"
               />
             </div>
 

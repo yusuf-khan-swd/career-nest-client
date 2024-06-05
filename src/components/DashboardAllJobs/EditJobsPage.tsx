@@ -34,7 +34,6 @@ const EditJobsPage = ({ id }: { id: string }) => {
     const location = form?.location?.value;
     const salary = form?.salary?.value;
     const description = form?.description?.value;
-    const image_url = form?.image_url?.value;
 
     const jobData = {
       title,
@@ -43,7 +42,6 @@ const EditJobsPage = ({ id }: { id: string }) => {
       location,
       salary,
       description,
-      image_url,
     };
 
     const baseUrl = getBaseUrl();
@@ -145,20 +143,6 @@ const EditJobsPage = ({ id }: { id: string }) => {
                 required
               />
             </div>
-
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Image URL</span>
-              </label>
-              <input
-                defaultValue={jobInfo?.image_url}
-                type="text"
-                name="image_url"
-                placeholder="Image URL"
-                className="input input-bordered"
-              />
-            </div>
-
             <div className="form-control">
               <label className="label">
                 <span className="label-text">
