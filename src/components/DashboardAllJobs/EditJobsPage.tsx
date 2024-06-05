@@ -21,7 +21,7 @@ const EditJobsPage = ({ id }: { id: string }) => {
           toast.error("Job data failed to get");
         }
       });
-  }, [id, token]);
+  }, [id]);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
