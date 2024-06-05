@@ -10,13 +10,13 @@ const Features = () => {
           </div>
           <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
             <span className="relative inline-block">
-              <span className="relative">The</span>
+              <span className="relative">Discover</span>
             </span>{" "}
-            quick, brown fox jumps over a lazy dog
+            exciting career opportunities tailored just for you.{" "}
           </h2>
           <p className="text-base text-gray-700 md:text-lg">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque rem aperiam, eaque ipsa quae.
+            Explore job listings from top companies across industries, and take
+            the next leap in your professional journey.
           </p>
         </div>
         <div className="grid gap-8 row-gap-10 lg:grid-cols-2">
@@ -36,77 +36,10 @@ const Features = () => {
                 />
               </svg>
             </div>
-            <h6 className="mb-3 text-xl font-bold leading-5">The deep ocean</h6>
+            <h6 className="mb-3 text-xl font-bold leading-5">Job Listings</h6>
             <p className="mb-3 text-sm text-gray-900">
-              A flower in my garden, a mystery in my panties. Heart attack never
-              stopped old Big Bear. I did not even know we were calling him Big
-              Bear. We never had the chance to.
-            </p>
-            <a
-              href="/"
-              aria-label=""
-              className="inline-flex items-center font-semibold transition-colors duration-200 text-purple-400 hover:text-deep-purple-800"
-            >
-              Learn more
-            </a>
-          </div>
-          <div className="max-w-md sm:mx-auto sm:text-center">
-            <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
-              <svg
-                className="w-12 h-12 text-deep-purple-400 sm:w-16 sm:h-16"
-                stroke="currentColor"
-                viewBox="0 0 52 52"
-              >
-                <polygon
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                  points="29 13 14 29 25 29 23 39 38 23 27 23"
-                />
-              </svg>
-            </div>
-            <h6 className="mb-3 text-xl font-bold leading-5">
-              When has justice
-            </h6>
-            <p className="mb-3 text-sm text-gray-900">
-              Rough pomfret lemon shark plownose chimaera southern sandfish
-              kokanee northern sea robin Antarctic cod. Yellow-and-black
-              triplefin gulper South American Lungfish mahi-mahi, butterflyfish
-              glass catfish soapfish ling gray mullet!
-            </p>
-            <a
-              href="/"
-              aria-label=""
-              className="inline-flex items-center font-semibold transition-colors duration-200 text-purple-400 hover:text-purple-800"
-            >
-              Learn more
-            </a>
-          </div>
-          <div className="max-w-md sm:mx-auto sm:text-center">
-            <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
-              <svg
-                className="w-12 h-12 text-purple-400 sm:w-16 sm:h-16"
-                stroke="currentColor"
-                viewBox="0 0 52 52"
-              >
-                <polygon
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                  points="29 13 14 29 25 29 23 39 38 23 27 23"
-                />
-              </svg>
-            </div>
-            <h6 className="mb-3 text-xl font-bold leading-5">
-              Organically grow
-            </h6>
-            <p className="mb-3 text-sm text-gray-900">
-              A slice of heaven. O for awesome, this chocka full cuzzie is as
-              rip-off as a cracker. Meanwhile, in behind the bicycle shed,
-              Hercules Morse, as big as a horse and Mrs Falani were up to no
-              good with a bunch of crook pikelets.
+              Allow employers to post job listings with details such as job
+              title, description, location, salary, and required qualifications.
             </p>
             <a
               href="/"
@@ -133,18 +66,79 @@ const Features = () => {
               </svg>
             </div>
             <h6 className="mb-3 text-xl font-bold leading-5">
-              A slice of heaven
+              Advanced Search
             </h6>
             <p className="mb-3 text-sm text-gray-900">
-              Disrupt inspire and think tank, social entrepreneur but
-              preliminary thinking think tank compelling. Inspiring, invest
-              synergy capacity building, white paper; silo, unprecedented
-              challenge B-corp problem-solvers.
+              Provide advanced search functionality for job seekers to filter
+              job listings based on criteria such as location, job type,
+              industry, salary range, and required skills.
             </p>
             <a
               href="/"
               aria-label=""
               className="inline-flex items-center font-semibold transition-colors duration-200 text-purple-accent-400 hover:text-purple-800"
+            >
+              Learn more
+            </a>
+          </div>
+          <div className="max-w-md sm:mx-auto sm:text-center">
+            <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
+              <svg
+                className="w-12 h-12 text-purple-400 sm:w-16 sm:h-16"
+                stroke="currentColor"
+                viewBox="0 0 52 52"
+              >
+                <polygon
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                  points="29 13 14 29 25 29 23 39 38 23 27 23"
+                />
+              </svg>
+            </div>
+            <h6 className="mb-3 text-xl font-bold leading-5">User Accounts</h6>
+            <p className="mb-3 text-sm text-gray-900">
+              Allow employers and job seekers to create accounts where they can
+              manage their job listings, applications, resumes, and profile
+              information.
+            </p>
+            <a
+              href="/"
+              aria-label=""
+              className="inline-flex items-center font-semibold transition-colors duration-200 text-purple-400 hover:text-deep-purple-800"
+            >
+              Learn more
+            </a>
+          </div>
+          <div className="max-w-md sm:mx-auto sm:text-center">
+            <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
+              <svg
+                className="w-12 h-12 text-deep-purple-400 sm:w-16 sm:h-16"
+                stroke="currentColor"
+                viewBox="0 0 52 52"
+              >
+                <polygon
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                  points="29 13 14 29 25 29 23 39 38 23 27 23"
+                />
+              </svg>
+            </div>
+            <h6 className="mb-3 text-xl font-bold leading-5">
+              Email Notifications
+            </h6>
+            <p className="mb-3 text-sm text-gray-900">
+              Send email notifications to job seekers about new job listings
+              matching their preferences and to employers about new job
+              applications.
+            </p>
+            <a
+              href="/"
+              aria-label=""
+              className="inline-flex items-center font-semibold transition-colors duration-200 text-purple-400 hover:text-purple-800"
             >
               Learn more
             </a>
