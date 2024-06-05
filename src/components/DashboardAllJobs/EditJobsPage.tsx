@@ -59,7 +59,7 @@ const EditJobsPage = ({ id }: { id: string }) => {
     })
       .then((res) => res.json())
       .then((result) => {
-        if (result?.data) {
+        if (result) {
           toast.success("Job data updated success");
         } else {
           toast.error("Job data update failed");
