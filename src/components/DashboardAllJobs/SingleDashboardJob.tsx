@@ -7,7 +7,7 @@ const SingleDashboardJob = ({ job, onDelete }: { job: any; onDelete: any }) => {
   const token = localStorage.getItem("token");
 
   const handleDelete = async () => {
-    const proceedToDelete = confirm("Are sure you want to delete this Jobs");
+    const proceedToDelete = confirm("Are sure you want to delete this Jobs ");
 
     if (proceedToDelete) {
       const baseUrl = getBaseUrl();
