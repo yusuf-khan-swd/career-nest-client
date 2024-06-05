@@ -94,16 +94,6 @@ const Navbar = () => {
             >
               Logout
             </button>
-            <div className="avatar">
-              <div className="w-12 rounded-full border-2">
-                <Image
-                  src={"/placeholder.jpg"}
-                  alt="avatar image"
-                  width={40}
-                  height={40}
-                />
-              </div>
-            </div>
           </>
         )}
       </div>
