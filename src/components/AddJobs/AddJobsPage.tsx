@@ -95,6 +95,19 @@ const AddJobsPage = () => {
             <div className="form-control">
               <label className="label">
                 <span className="label-text">
+                  <span className="text-red-500 mr-1">*</span>Location
+                </span>
+              </label>
+              <input
+                type="text"
+                name="location"
+                placeholder="Location"
+                className="input input-bordered"
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">
                   <span className="text-red-500 mr-1">*</span>Job Type
                 </span>
               </label>
@@ -109,24 +122,11 @@ const AddJobsPage = () => {
             <div className="form-control">
               <label className="label">
                 <span className="label-text">
-                  <span className="text-red-500 mr-1">*</span>Location
-                </span>
-              </label>
-              <input
-                type="text"
-                name="location"
-                placeholder="Location"
-                className="input input-bordered"
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">
                   <span className="text-red-500 mr-1">*</span>Salary
                 </span>
               </label>
               <input
-                type="number"
+                type="text"
                 name="salary"
                 placeholder="Salary"
                 className="input input-bordered"
