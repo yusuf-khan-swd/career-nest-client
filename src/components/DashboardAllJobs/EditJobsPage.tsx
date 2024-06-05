@@ -1,7 +1,177 @@
+"use client";
+
+import { getBaseUrl } from "@/helpers/getBaseUrl";
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+
 const EditJobsPage = ({ id }: { id: string }) => {
+  const [userInfo, setUserInfo] = useState<null | any>({});
+
+  const token = localStorage.getItem("token");
+
+  useEffect(() => {
+    const baseUrl = getBaseUrl();
+
+    fetch(`${baseUrl}/users/profile/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result?.data) {
+          setUserInfo(result?.data);
+        } else {
+          toast.error("User data failed to get");
+        }
+      });
+  }, [id, token]);
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const name = form.name.value;
+    const email = userInfo?.email;
+    const number = form.number.value;
+
+    const user = { email, name, number };
+    console.log(user);
+
+    const baseUrl = getBaseUrl();
+
+    fetch(`${baseUrl}/users/profile/${id}`, {
+      method: "PATCH",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result?.data) {
+          toast.success("User data updated success");
+        } else {
+          toast.error("User data update failed");
+        }
+      });
+  };
   return (
     <div>
       <h1>Edit Jobs Page{id}</h1>
+      <div>
+        <h1 className="text-5xl font-bold text-center mt-4 mb-6">Add a Job</h1>
+        <div className="card shadow-xl bg-base-200">
+          <div className="card-body">
+            <form onSubmit={handleSubmit}>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">
+                    <span className="text-red-500 mr-1">*</span>Job Title
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  name="title"
+                  placeholder="Title"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">
+                    <span className="text-red-500 mr-1">*</span>Company Name
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  name="company"
+                  placeholder="Company Name"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">
+                    <span className="text-red-500 mr-1">*</span>Job Type
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  name="type"
+                  placeholder="Job Type"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">
+                    <span className="text-red-500 mr-1">*</span>Location
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  name="location"
+                  placeholder="Location"
+                  className="input input-bordered"
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">
+                    <span className="text-red-500 mr-1">*</span>Salary
+                  </span>
+                </label>
+                <input
+                  type="number"
+                  name="salary"
+                  placeholder="Salary"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Image URL</span>
+                </label>
+                <input
+                  type="text"
+                  name="image_url"
+                  placeholder="Image URL"
+                  className="input input-bordered"
+                />
+              </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">
+                    <span className="text-red-500 mr-1">*</span>Description
+                  </span>
+                </label>
+                <textarea
+                  name="description"
+                  placeholder="Description"
+                  className="textarea textarea-bordered p-2"
+                  rows={6}
+                  required
+                ></textarea>
+              </div>
+              <div className="mt-2 flex justify-center items-center">
+                <input
+                  className="btn mt-4 w-full btn-primary text-white p-4"
+                  type="submit"
+                  value="Add This Job"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
