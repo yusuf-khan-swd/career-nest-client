@@ -17,8 +17,8 @@ const DashboardAllJobsPage = () => {
 
   return (
     <div>
-      <h1 className="text-5xl font-bold text-center">All Jobs</h1>
-      <div className="my-16 flex justify-center flex-wrap gap-4">
+      <h1 className="text-3xl font-bold text-center mb-2">All Jobs</h1>
+      <div className="mb-16 flex justify-center flex-wrap gap-4">
         {jobs.map((job: any) => (
           <SingleDashboardJob
             key={job?.id}
