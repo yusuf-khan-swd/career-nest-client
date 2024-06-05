@@ -3,58 +3,58 @@ const FaqPage = () => {
     <div className="min-h-[80vh] max-w-4xl mx-auto m-2 container">
       <div className="collapse collapse-arrow bg-base-200 mb-4">
         <input type="checkbox" className="peer" />
-        <div className="collapse-title text-xl font-medium">Size Guide</div>
+        <div className="collapse-title text-xl font-medium">
+          How do I post a job on your website?
+        </div>
         <div className="collapse-content">
-          <p>
-            Ensure you get the perfect fit with our comprehensive size guide.
-            Measure your feet accurately to find the right size for you.
+          <p className="mb-2">
+            To post a job on our website, follow these steps:
           </p>
-          <p className="font-semibold my-5">How to Measure:</p>
           <ol className="list-decimal list-inside">
-            <li className="mb-2">Place your foot on a piece of paper.</li>
             <li className="mb-2">
-              Mark the end of your heel and the tip of your longest toe.
+              Sign Up/Login: Create an account or log in to your existing
+              account.
             </li>
             <li className="mb-2">
-              Measure the distance between the two marks.
+              Create a Job Post: Navigate to the &quot;Post a Job&quot; section
+              in dashboard and fill out the job posting form with details such
+              as job title, company name, location, job type, description,
+              responsibilities, qualifications, salary, and application process.
             </li>
-            <li className="mb-2">Refer to our size chart to find your size.</li>
+            <li className="mb-2">
+              Submit for Review: Once you&apos;ve filled out the form, submit
+              your job posting for review. Our team will review it for
+              completeness and compliance with our guidelines.
+            </li>
+            <li className="mb-2">
+              Publish: After approval, your job posting will go live on our
+              website, and job seekers can start applying.
+            </li>
           </ol>
-          <p className="font-semibold my-5">Size Chart:</p>
-          <ul className="list-disc list-inside">
-            <li className="mb-2">US Sizes: 5, 6, 7, 8, 9, 10, 11, 12</li>
-            <li className="mb-2">UK Sizes: 4, 5, 6, 7, 8, 9, 10, 11</li>
-            <li className="mb-2">EU Sizes: 37, 38, 39, 40, 41, 42, 43, 44</li>
-          </ul>
         </div>
       </div>
       <div className="collapse collapse-arrow bg-base-200 mb-4">
         <input type="checkbox" className="peer" />
         <div className="collapse-title text-xl font-medium">
-          Shipping & Delivery
+          How much does it cost to post a job?
         </div>
         <div className="collapse-content">
           <p>
-            Learn about our shipping options and delivery times to get your
-            shoes as quickly as possible.
+            The cost of posting a job on our website varies based on the package
+            you choose. We offer several options:
           </p>
-          <p className="font-semibold my-5">Shipping Options:</p>
+          <p className="font-semibold my-5">Costing Options:</p>
           <ul className="list-disc list-inside">
             <li className="mb-2">
-              Standard Shipping: 5-7 Business Days, $5.99
+              Basic Package: $50 per job post for a 30-day listing.
             </li>
             <li className="mb-2">
-              Express Shipping: 2-3 Business Days, $15.99
+              Standard Package: $100 per job post for a 60-day listing,
+              including featured placement.
             </li>
             <li className="mb-2">
-              International Shipping: 7-14 Business Days, $25.99
-            </li>
-          </ul>
-          <p className="font-semibold my-5">Tracking Your Order:</p>
-          <ul className="list-disc list-inside">
-            <li className="mb-2">
-              Once your order is shipped, you will receive a tracking number via
-              email.
+              Premium Package: $150 per job post for a 90-day listing, including
+              featured placement and social media promotion.
             </li>
           </ul>
         </div>
@@ -62,19 +62,21 @@ const FaqPage = () => {
       <div className="collapse collapse-arrow bg-base-200 mb-4">
         <input type="checkbox" className="peer" />
         <div className="collapse-title text-xl font-medium">
-          Returns & Exchanges
+          How can I manage and edit my job postings?
         </div>
         <div className="collapse-content">
           <p className="my-5">
-            We want you to be completely satisfied with your purchase. If
-            you&apos;re not, you can easily return or exchange your shoes.
+            To manage and edit your job postings, follow these steps:
           </p>
           <ul className="list-disc list-inside">
+            <li className="mb-2">Login: Log in to your account.</li>
             <li className="mb-2">
-              Returns accepted within 30 days of purchase.
+              Dashboard: Navigate to your account dashboard where you will see a
+              list of all your active job postings.{" "}
             </li>
             <li className="mb-2">
-              Shoes must be in original condition and packaging.
+              Edit Post: Click on the job title you wish to edit. Make the
+              necessary changes in the job posting form and save your updates.
             </li>
           </ul>
           <p className="font-semibold my-5">How to Return:</p>
