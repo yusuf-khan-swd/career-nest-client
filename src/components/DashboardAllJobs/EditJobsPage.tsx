@@ -45,7 +45,6 @@ const EditJobsPage = ({ id }: { id: string }) => {
       description,
       image_url,
     };
-    console.log(jobData);
 
     const baseUrl = getBaseUrl();
 
