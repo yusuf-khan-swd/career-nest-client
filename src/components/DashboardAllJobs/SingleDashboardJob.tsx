@@ -38,9 +38,11 @@ const SingleDashboardJob = ({ job, onDelete }: { job: any; onDelete: any }) => {
         <h3 className="text-xl font-semibold">Price: ${salary}</h3>
         <p>Description: {description}</p>
         <div className="card-actions justify-end">
-          <button className="btn bg-indigo-500 text-white">
-            <Link href={`/jobs/view/${_id}`}>See details</Link>
-          </button>
+          <Link href={`/jobs/view/${_id}`}>
+            <button className="btn bg-indigo-500 text-white">
+              See details
+            </button>
+          </Link>
           <Link href={`all-jobs/edit/${_id}`}>
             <button className="btn bg-green-600 text-white">Edit</button>
           </Link>
