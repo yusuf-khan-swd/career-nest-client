@@ -11,7 +11,12 @@ const JobCard = ({ job }: { job: any }) => {
         <p className="font-semibold">Location: {location}</p>
         <p>Job Type: {type}</p>
         <p className="font-semibold">Salary: {salary}</p>
-        <p>Description: {description.slice(0, 255) + "..."}</p>
+        <p>
+          Description:{" "}
+          {description?.length < 250
+            ? description
+            : description.slice(0, 255) + "..."}
+        </p>
         <div className="card-actions justify-end">
           <Link href={`/jobs/view/${_id}`}>
             <button className="btn bg-indigo-500 text-white">
