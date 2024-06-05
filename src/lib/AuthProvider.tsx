@@ -16,7 +16,6 @@ export const AuthContext = createContext<null | any>(null);
 
 const auth = getAuth(app);
 
-// eslint-disable-next-line react/prop-types
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const googleProvider = new GoogleAuthProvider();
 
