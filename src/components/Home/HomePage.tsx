@@ -4,6 +4,7 @@ import { getBaseUrl } from "@/helpers/getBaseUrl";
 import { useEffect, useState } from "react";
 import JobCard from "../Jobs/JobCard";
 import Banner from "../ui/Banner";
+import Features from "../ui/Features";
 import Statics from "../ui/Statics";
 
 const HomePage = () => {
@@ -30,6 +31,7 @@ const HomePage = () => {
           </div>
         </div>
         <div>
+          <Features />
           <Statics />
         </div>
       </div>
