@@ -49,11 +49,11 @@ const Navbar = () => {
       {!user && (
         <>
           <button className="border rounded-lg mr-2">
-            <Link className="btn btn-ghost" href="/register">
+            <Link className="btn btn-sm sm:btn-md btn-ghost" href="/register">
               Register
             </Link>
           </button>
-          <button className="btn btn-primary">
+          <button className="btn btn-sm sm:btn-md btn-primary">
             <Link href="/login">Login</Link>
           </button>
         </>
