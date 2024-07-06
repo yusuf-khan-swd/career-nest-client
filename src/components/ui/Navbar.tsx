@@ -36,20 +36,25 @@ const Navbar = () => {
       <li>
         <Link href="/contact">Contact Us</Link>
       </li>
-      {!user && (
-        <>
-          <li>
-            <Link href="/login">Login</Link>
-          </li>
-          <li>
-            <Link href="/register">Register</Link>
-          </li>
-        </>
-      )}
       {user && (
         <li>
           <Link href="/dashboard">Dashboard</Link>
         </li>
+      )}
+    </>
+  );
+
+  const loginMenuItems = (
+    <>
+      {!user && (
+        <>
+          <button className="btn btn-primary">
+            <Link href="/login">Login</Link>
+          </button>
+          <button className="btn btn-outline">
+            <Link href="/register">Register</Link>
+          </button>
+        </>
       )}
     </>
   );
@@ -89,6 +94,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{menuItems}</ul>
       </div>
       <div className="navbar-end">
+        {loginMenuItems}
         {user && (
           <>
             <button
